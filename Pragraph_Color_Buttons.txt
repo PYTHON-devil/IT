@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Style Changer</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <p id="text">Atomic Habits by James Clear is a comprehensive, 
+    practical guide on how to change your habits and get 1% better every day. 
+    Using a framework called the Four Laws of Behavior Change, Atomic Habits teaches
+    readers a simple set of rules for creating good habits and breaking bad ones.
+    Read the full summary to glean 3 key lessons from Atomic Habits, learn how to
+    build a habit in 4 simple steps, and get a handy reference guide for the strategies
+    recommended throughout the book.</p>
+
+  <div class="button-grid">
+    <button onclick="changeColor('red')">Red</button>
+    <button onclick="changeColor('green')">Green</button>
+    <button onclick="changeColor('blue')">Blue</button>
+    <button onclick="changeFontSize(10)">10</button>
+    <button onclick="changeFontSize(20)">20</button>
+    <button onclick="changeFontSize(30)">30</button>
+    <button onclick="changeFont('Arial')">Arial</button>
+    <button onclick="changeFont('Times New Roman')">Times New Roman</button>
+    <button onclick="changeFont('Verdana')">Verdana</button>
+  </div>
+
+  <script>
+    // JavaScript functions to change paragraph style
+    function changeColor(color) {
+      document.getElementById('text').style.color = color;
+    }
+
+    function changeFontSize(size) {
+      document.getElementById('text').style.fontSize = size + 'px';
+    }
+
+    function changeFont(font) {
+      document.getElementById('text').style.fontFamily = font;
+    }
+  </script>
+</body>
+</html>

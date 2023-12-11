@@ -1,0 +1,27 @@
+const http = require('http');
+
+const hostname = '127.0.0.1';
+let port = 10000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello world, This is my Node.js server\n');
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    // If the port is in use, try the next one
+    port++;
+    server.listen(port, hostname, () => {
+      console.log(`Server running at http://${hostname}:${port}/`);
+    });
+  } else {
+    console.error('Error starting server:', err);
+  }
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+

@@ -1,0 +1,65 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(Q3_bg.jpg);
+      background-size: cover;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      height: 90vh;
+    }
+    .container {
+      background-color: #070303;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .info {
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #000000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.49);
+    }
+
+  </style>
+</head>
+<body>
+    <div class="container">
+    <h1>About Me</h1>
+
+  <div class="info">
+    <h2>Personal Information</h2>
+    <p>Name: Aniket</p>
+    <p>Course: Bsc(Hons.) Computer Science</p>
+    <p>Hobbies: Playing Video Games, Playing Guitar</p>
+    <p>Address: Delhi</p>
+    <p>Plans: Software Developer</p>
+  </div>
+</div>
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap Image Gallery</title>
+  <!-- Bootstrap CSS CDN link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Additional styles */
+    .gallery img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mt-4 mb-5">Image Gallery</h1>
+    <div class="row gallery">
+      <div class="col-md-4">
+        <img src="Q9_Apple.jpg" alt="Image 1">
+      </div>
+      <div class="col-md-4">
+        <img src="Q9_car.jpg" alt="Image 2">
+      </div>
+      <div class="col-md-4">
+        <img src="Q9_Tony.jpg" alt="Image 3">
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js CDN links -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

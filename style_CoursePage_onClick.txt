@@ -1,0 +1,91 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>B.Sc. Hons CS Course</title>
+  <style>
+    /* Initial styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    #styleButton {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: 2px solid #333;
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>B.Sc. Hons CS Course</h1>
+
+  <h2>Details:</h2>
+  <ul>
+    <li><strong>Fee:</strong> ₹45000</li>
+    <li><strong>Eligibility Criteria:</strong> Must Have Subjects : Computer and Mathematics</li>
+    <li><strong>Papers with Names and Credits:</strong><br> 1 - Internet Technologies  :  06 <br> 
+    2 - Data Analysis and Visualisation  :  04 <br> 3 - Microprocessor  :  06<br> 4 - Theory of Computation  :  06</li>
+    <li><strong>Future Possibilities:</strong> 
+        <ul>
+            <li>Software Engineer</li>
+            <li>Data Scientist</li>
+            <li>Information System Mangar</li>
+            <li>Mobile App Developer</li>
+            <li>Front-End Developer</li>
+            <li>Enterprise Architect</li>
+            <li>It Security specialist</li>
+            <li>Data Analyst</li>
+        </ul>
+        </li>
+  </ul>
+
+  <button id="styleButton">Click to Style</button>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="Q8_CoursePage.js"></script>
+</body>
+</html>
+
+JS
+
+// jQuery code to redesign the page on button click
+$('#styleButton').click(function() {
+    // Apply new styles to elements
+    $('body').css({
+      'font-family': 'Verdana, sans-serif',
+      'margin': '50px',
+      'background-color': '#f5f5f5'
+    });
+    $('h1').css({
+      'text-align': 'center',
+      'color': '#333',
+      'text-transform': 'uppercase'
+    });
+    $('ul').css({
+      'padding-left': '40px',
+      'font-size': '18px'
+    });
+    $('#styleButton').css({
+      'margin': '30px auto',
+      'padding': '15px 25px',
+      'font-size': '20px',
+      'background-color': '#333',
+      'color': '#fff'
+    });
+  });
+  

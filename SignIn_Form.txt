@@ -1,0 +1,107 @@
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authentication</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <div>
+        <h2>Sign In</h2>
+        <form action="/signin" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
+    <div>
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST">
+            <label for="newUsername">New Username:</label>
+            <input type="text" id="newUsername" name="newUsername" required><br><br>
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" name="newPassword" required><br><br>
+            <input type="submit" value="Sign Up">
+        </form>
+    </div>
+</body>
+</html>
+
+
+JS
+
+// app.js or server.js
+
+const express = require('express');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Create a MySQL connection
+const connection = mysql.createConnection({
+    host: '@niket',
+    user: '@niket',
+    password: 'this_password',
+    database: 'user_login'
+});
+
+// Connect to MySQL
+connection.connect((err) => {
+    if (err) {
+        console.error('Error connecting to database:', err);
+        return;
+    }
+    console.log('Connected to MySQL database');
+});
+
+// Middleware to parse incoming request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// Serve index.html file
+app.get('/Q112.html', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
+// Sign-in endpoint
+app.post('/signin', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    // Check credentials in the database
+    connection.query('SELECT * FROM users WHERE username = ? AND password = ?', [username, password], (err, results) => {
+        if (err) throw err;
+
+        if (results.length > 0) {
+            // Successful sign-in
+            res.send('Welcome ' + username); // You can also redirect to a welcome page
+        } else {
+            // Invalid credentials
+            res.send('Invalid username or password');
+        }
+    });
+});
+
+// Sign-up endpoint
+app.post('/signup', (req, res) => {
+    const newUsername = req.body.newUsername;
+    const newPassword = req.body.newPassword;
+
+    // Insert new user into the database
+    connection.query('INSERT INTO users (username, password) VALUES (?, ?)', [newUsername, newPassword], (err, results) => {
+        if (err) throw err;
+
+        // Successful sign-up
+        res.redirect('/Q12.html'); // Redirect to index.html after successful sign-up
+    });
+});
+
+// Start the server
+const port = 3000; // Change the port if needed
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+});
